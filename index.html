@@ -74,61 +74,42 @@
 
         .invitation-header {
             position: relative;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-        }
-
-        .invitation-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--rose-gold) 0%, var(--dark-sage) 100%);
-        }
-
-        .invitation-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--dark-sage) 0%, var(--rose-gold) 100%);
+            margin-bottom: 4rem;
+            padding: 2.5rem 0;
         }
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4.5rem;
+            font-size: 4rem;
             color: var(--dark-sage);
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: 1.5px;
             position: relative;
             z-index: 1;
+            line-height: 1.2;
         }
 
         h1::before {
-            content: '✨';
+            content: '';
             position: absolute;
-            left: -30px;
             top: 50%;
+            left: -40px;
             transform: translateY(-50%);
-            font-size: 2.5rem;
-            color: var(--rose-gold);
+            width: 3px;
+            height: 50px;
+            background: linear-gradient(180deg, transparent 0%, var(--rose-gold) 50%, transparent 100%);
         }
 
         h1::after {
-            content: '✨';
+            content: '';
             position: absolute;
-            right: -30px;
             top: 50%;
+            right: -40px;
             transform: translateY(-50%);
-            font-size: 2.5rem;
-            color: var(--rose-gold);
+            width: 3px;
+            height: 50px;
+            background: linear-gradient(180deg, transparent 0%, var(--rose-gold) 50%, transparent 100%);
         }
 
         .tulip-background {

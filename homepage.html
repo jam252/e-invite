@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://via.placeholder.com/1920x1080?text=Wedding+Background');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800">
+    <div class="min-h-screen flex flex-col justify-center items-center overlay">
+        <header class="text-center py-10">
+            <h1 class="text-5xl md:text-7xl font-serif text-pink-600">We're Getting Married!</h1>
+            <p class="text-2xl md:text-3xl font-light mt-4">Emma & James</p>
+        </header>
+        <section class="text-center px-4">
+            <p class="text-lg md:text-xl mb-6">Join us to celebrate our special day</p>
+            <p class="text-xl md:text-2xl font-semibold">Saturday, August 15, 2025</p>
+            <p class="text-lg md:text-xl">at 4:00 PM</p>
+            <p class="text-lg md:text-xl mb-8">The Grand Garden Venue, 123 Love Lane, Happytown</p>
+            <a href="#rsvp" class="inline-block bg-pink-500 text-white py-3 px-6 rounded-full text-lg hover:bg-pink-600 transition duration-300">RSVP Now</a>
+        </section>
+        <footer class="mt-10 text-center">
+            <p class="text-sm text-gray-600">We can't wait to share our joy with you!</p>
+        </footer>
+    </div>
+</body>
+</html>

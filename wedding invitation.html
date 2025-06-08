@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .invitation-container {
+            min-height: 100vh;
+            position: relative;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .tulip-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+            background-image: 
+                radial-gradient(circle at 20% 30%, #ff69b4 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, #ff69b4 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, #ff69b4 0%, transparent 50%),
+                radial-gradient(circle at 30% 40%, #ff69b4 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, #ff69b4 0%, transparent 50%);
+            background-size: 150px 150px;
+            opacity: 0.2;
+            z-index: 0;
+            animation: tulipBloom 10s infinite alternate;
+        }
+
+        @keyframes tulipBloom {
+            0% {
+                opacity: 0.2;
+                transform: scale(1) translateX(0);
+            }
+            50% {
+                opacity: 0.3;
+                transform: scale(1.05) translateX(2px);
+            }
+            100% {
+                opacity: 0.2;
+                transform: scale(1) translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        .tulip-floating {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #ff69b4 0%, transparent 50%);
+            border-radius: 50% 0 50% 50%;
+            opacity: 0.3;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .tulip-floating:nth-child(1) {
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .tulip-floating:nth-child(2) {
+            top: 40%;
+            left: 65%;
+            animation-delay: 2s;
+        }
+
+        .tulip-floating:nth-child(3) {
+            top: 70%;
+            left: 35%;
+            animation-delay: 4s;
+        }
+
+        .tulip-floating:nth-child(4) {
+            top: 30%;
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        .tulip-floating:nth-child(5) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 3s;
+        }
+
+        .tulip-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255,105,180,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255,105,180,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 45% 45%, rgba(255,105,180,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 55% 55%, rgba(255,105,180,0.2) 0%, transparent 50%);
+            background-size: 100px 100px;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .invitation-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff69b4;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #ff69b4;
+            margin-bottom: 2rem;
+        }
+
+        .couple-names h2 {
+            font-size: 3rem;
+            margin: 2rem 0;
+            color: #333;
+        }
+
+        .event-details {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 2rem 0;
+            line-height: 1.8;
+        }
+
+        .rsvp-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #ff69b4;
+        }
+
+        .rsvp-section h3 {
+            color: #ff69b4;
+            margin-bottom: 1rem;
+        }
+
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .rsvp-form input {
+            padding: 0.8rem;
+            border: 2px solid #ff69b4;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .rsvp-options {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .rsvp-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .rsvp-form button {
+            background-color: #ff69b4;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .rsvp-form button:hover {
+            background-color: #ff1493;
+        }
+
+        @media (max-width: 768px) {
+            .invitation-content {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .couple-names h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="invitation-container">
+        <!-- Background Elements -->
+        <div class="tulip-background"></div>
+        <div class="tulip-pattern"></div>
+        
+        <!-- Floating Tulips -->
+        <div class="tulip-floating"></div>
+        <div class="tulip-floating"></div>
+        <div class="tulip-floating"></div>
+        <div class="tulip-floating"></div>
+        <div class="tulip-floating"></div>
+        
+        <!-- Main Invitation Content -->
+        <div class="invitation-content">
+            <div class="invitation-header">
+                <h1>✨ You're Invited ✨</h1>
+                <div class="couple-names">
+                    <h2>John & Jane</h2>
+                </div>
+            </div>
+
+            <div class="event-details">
+                <div class="event-info">
+                    <div class="date">Saturday, June 21st, 2025</div>
+                    <div class="time">6:00 PM</div>
+                    <div class="location">
+                        <h4>Ceremony & Reception</h4>
+                        <p>The Grand Hall<br>123 Love Street, City</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rsvp-section">
+                <h3>RSVP</h3>
+                <p class="rsvp-text">Please let us know by June 14th, 2025</p>
+                <form class="rsvp-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <div class="rsvp-options">
+                        <label>
+                            <input type="radio" name="attendance" value="yes" required>
+                            <span>Yes, I'll be there</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="attendance" value="no">
+                            <span>Sorry, I can't make it</span>
+                        </label>
+                    </div>
+                    <button type="submit">Confirm Attendance</button>
+                </form>
+            </div>
+
+            <div class="footer">
+                <p>With love and joy, we invite you to celebrate our special day</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add animation to the invitation
+            const invitationContent = document.querySelector('.invitation-content');
+            invitationContent.style.opacity = '0';
+            invitationContent.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                invitationContent.style.opacity = '1';
+                invitationContent.style.transform = 'translateY(0)';
+                invitationContent.style.transition = 'all 0.8s ease-out';
+            }, 100);
+
+            // Handle RSVP form submission
+            const rsvpForm = document.querySelector('.rsvp-form');
+            if (rsvpForm) {
+                rsvpForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.querySelector('.rsvp-form input[type="text"]').value;
+                    const attendance = document.querySelector('.rsvp-form input[name="attendance"]:checked').value;
+                    
+                    let message;
+                    if (attendance === 'yes') {
+                        message = `Thank you ${name}! We're excited to see you at our wedding.`;
+                    } else {
+                        message = `Thank you ${name} for letting us know. We understand if you can't make it.`;
+                    }
+                    
+                    alert(message);
+                    rsvpForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

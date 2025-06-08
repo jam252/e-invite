@@ -16,10 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
         rsvpForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.querySelector('.rsvp-form input[type="text"]').value;
-            const email = document.querySelector('.rsvp-form input[type="email"]').value;
+            const attendance = document.querySelector('.rsvp-form input[name="attendance"]:checked').value;
             
             // Here you would typically send this data to a server
-            alert(`Thank you ${name}! Your RSVP has been received.`);
+            let message;
+            if (attendance === 'yes') {
+                message = `Thank you ${name}! We're excited to see you at our wedding.`;
+            } else {
+                message = `Thank you ${name} for letting us know. We understand if you can't make it.`;
+            }
+            
+            alert(message);
             rsvpForm.reset();
         });
     }

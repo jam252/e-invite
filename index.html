@@ -9,29 +9,56 @@
 </head>
 <body>
     <div class="invitation-container">
+        <!-- Background Elements -->
         <div class="tulip-background"></div>
         <div class="tulip-pattern"></div>
-        <div class="tulip-floating"></div>
-        <div class="tulip-floating"></div>
-        <div class="tulip-floating"></div>
+        
+        <!-- Floating Tulips -->
+        <div class="tulip-floating" style="top: 20%; left: 15%;"></div>
+        <div class="tulip-floating" style="top: 40%; left: 65%;"></div>
+        <div class="tulip-floating" style="top: 70%; left: 35%;"></div>
+        
+        <!-- Main Invitation Content -->
         <div class="invitation-content">
-            <h1>✨ You're Invited ✨</h1>
-            <div class="couple-names">
-                <h2>John & Jane</h2>
+            <div class="invitation-header">
+                <h1>✨ You're Invited ✨</h1>
+                <div class="couple-names">
+                    <h2>John & Jane</h2>
+                </div>
             </div>
+
             <div class="event-details">
-                <div class="date">Saturday, June 21st, 2025</div>
-                <div class="time">6:00 PM</div>
-                <div class="location">The Grand Hall<br>123 Love Street, City</div>
+                <div class="event-info">
+                    <div class="date">Saturday, June 21st, 2025</div>
+                    <div class="time">6:00 PM</div>
+                    <div class="location">
+                        <h4>Ceremony & Reception</h4>
+                        <p>The Grand Hall<br>123 Love Street, City</p>
+                    </div>
+                </div>
             </div>
+
             <div class="rsvp-section">
                 <h3>RSVP</h3>
-                <p>Please let us know by June 14th, 2025</p>
+                <p class="rsvp-text">Please let us know by June 14th, 2025</p>
                 <form class="rsvp-form">
                     <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <button type="submit">RSVP Now</button>
+                    <div class="rsvp-options">
+                        <label>
+                            <input type="radio" name="attendance" value="yes" required>
+                            <span>Yes, I'll be there</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="attendance" value="no">
+                            <span>Sorry, I can't make it</span>
+                        </label>
+                    </div>
+                    <button type="submit">Confirm Attendance</button>
                 </form>
+            </div>
+
+            <div class="footer">
+                <p>With love and joy, we invite you to celebrate our special day</p>
             </div>
         </div>
     </div>

@@ -6,19 +6,26 @@
     <title>Wedding Invitation</title>
     <style>
         :root {
-            --light-pink: #ffd8e4;
-            --baby-pink: #ffe4e1;
-            --sage-green: #b2d3c2;
+            --light-pink: #fff5f7;
+            --soft-pink: #ffd1dc;
+            --sage-green: #a8d8b4;
             --dark-sage: #669966;
+            --rose-gold: #ffb7b2;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --accent: #ff99cc;
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--light-pink);
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--soft-pink) 100%);
             overflow-x: hidden;
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .invitation-container {
@@ -84,85 +91,164 @@
             z-index: 1;
             text-align: center;
             max-width: 800px;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 2px solid var(--sage-green);
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            box-shadow: 0 20px 50px var(--shadow);
+            border: 2px solid var(--rose-gold);
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .invitation-content:hover {
+            transform: translateY(0);
+            box-shadow: 0 30px 60px var(--shadow);
+        }
+
+        .invitation-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent) 0%, transparent 100%);
+            opacity: 0.1;
+            z-index: -1;
         }
 
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--dark-sage);
             margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
         }
 
         .couple-names h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 2rem 0;
             color: var(--dark-sage);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
         }
 
         .event-details {
-            font-size: 1.2rem;
-            color: #666;
-            margin: 2rem 0;
-            line-height: 1.8;
+            font-size: 1.4rem;
+            color: #555;
+            margin: 3rem 0;
+            line-height: 2.2;
+            font-weight: 500;
+        }
+
+        .event-details .date {
+            font-size: 1.6rem;
+            color: var(--dark-sage);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .event-details .time {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .event-details .location {
+            font-size: 1.3rem;
         }
 
         .rsvp-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--sage-green);
+            margin-top: 4rem;
+            padding-top: 2.5rem;
+            border-top: 3px solid var(--gold);
         }
 
         .rsvp-section h3 {
             color: var(--dark-sage);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
         }
 
         .rsvp-form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 2rem;
             max-width: 400px;
             margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow);
         }
 
         .rsvp-form input {
-            padding: 0.8rem;
-            border: 2px solid var(--sage-green);
-            border-radius: 5px;
-            font-size: 1rem;
+            padding: 1.2rem;
+            border: 2px solid var(--rose-gold);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .rsvp-form input:focus {
+            outline: none;
+            border-color: var(--dark-sage);
+            box-shadow: 0 0 0 4px rgba(255, 153, 204, 0.3);
         }
 
         .rsvp-options {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .rsvp-options label {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
             cursor: pointer;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--soft-pink) 100%);
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .rsvp-options label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .rsvp-options input[type="radio"] {
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+            accent-color: var(--dark-sage);
         }
 
         .rsvp-form button {
-            background-color: var(--sage-green);
+            background: linear-gradient(135deg, var(--rose-gold) 0%, var(--dark-sage) 100%);
             color: white;
-            padding: 1rem;
+            padding: 1.3rem 3rem;
             border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px var(--shadow);
+            width: 100%;
         }
 
         .rsvp-form button:hover {
-            background-color: var(--dark-sage);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--shadow);
+            background: linear-gradient(135deg, var(--dark-sage) 0%, var(--rose-gold) 100%);
         }
 
         @media (max-width: 768px) {
